@@ -10,7 +10,7 @@ import com.backend.Arch.Reppo.UserReppo;
 
 
 
-
+// Data initializer only for firstTime(when DB is empty)
 @Component
 public class DataInitializer implements CommandLineRunner{
 	@Autowired
