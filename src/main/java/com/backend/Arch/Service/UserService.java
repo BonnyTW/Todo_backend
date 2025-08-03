@@ -38,8 +38,11 @@ public class UserService {
 
 	public ResponseEntity<?> register(@Valid UserRegistrationDto userDto) {
 		Users user=userReppo.findByUsername(userDto.username());
-		if(user!=null) {
-			throw new RuntimeException( "username exists!!!");}
+		  if (user != null) {
+		        return ResponseEntity
+		                .status(HttpStatus.CONFLICT)
+		                .body("❌ Username already exists!");
+		    }
 		
 	    Users newUser = userMapper.toUser(userDto);
 	    newUser.setPassword(encoder.encode(userDto.password()));
