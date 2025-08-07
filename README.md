@@ -14,7 +14,6 @@ This is a Spring Boot backend for the Todo app.
 
 Create environment variables for sensitive info:
 
-- `DB_NAME` - your PostgreSQL database name  
 - `DB_USERNAME` - database username  
 - `DB_PASSWORD` - database password  
 - `SMTP_USERNAME` - Gmail address for sending emails  
@@ -26,7 +25,6 @@ Create environment variables for sensitive info:
 The application uses these variables from the environment. Example properties:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/${DB_NAME}
 spring.datasource.username=${DB_USERNAME}
 spring.datasource.password=${DB_PASSWORD}
 
