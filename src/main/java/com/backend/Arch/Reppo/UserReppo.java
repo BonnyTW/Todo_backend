@@ -8,4 +8,5 @@ import com.backend.Arch.Model.Users;
 @Repository
 public interface UserReppo extends JpaRepository<Users,Integer>{
 	Users findByUsername(String username);
+	Users findByEmail(String email);
 }

@@ -1,7 +1,9 @@
 package com.backend.Arch.Mapper;
 
-
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
+
 import com.backend.Arch.DTO.UserRegistrationDto;
 import com.backend.Arch.DTO.UserResponseDto;
 import com.backend.Arch.Model.Users;
@@ -17,7 +19,7 @@ public class UserMapper {
         user.setRole("USER"); 
         return user;
     }
-    
+
     public UserResponseDto toDto(Users user) {
         return new UserResponseDto(
             user.getId(),
@@ -26,8 +28,12 @@ public class UserMapper {
             user.getRole()
         );
     }
- }
 
-    
-    
-
+    public UserDetails toUserDetails(Users user) {
+        return User
+            .withUsername(user.getUsername())
+            .password(user.getPassword())
+            .authorities(user.getRole())
+            .build();
+    }
+}
