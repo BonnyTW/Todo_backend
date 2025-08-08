@@ -1,5 +1,4 @@
 # Todo Backend
-
 This is a Spring Boot backend for the Todo app.
 
 ## Features
