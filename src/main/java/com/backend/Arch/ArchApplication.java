@@ -1,5 +1,5 @@
-package com.backend.Arch;
 
+package com.backend.Arch;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
